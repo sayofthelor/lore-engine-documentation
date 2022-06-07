@@ -15,75 +15,75 @@ Lua scripts are automatically executed under several conditions for any given mo
 Callbacks 
 ----------
 
-**``onCreate()``**
+**onCreate()**
 
-    Called once at the beginning of PlayState's ``create()`` function.
+Called once at the beginning of PlayState's ``create()`` function.
 
 .. note::
 
     This is before many variables are properly initialized, so anything you set here  in PlayState will likely be overwritten.
 
-**``onCreatePost()``**
+**onCreatePost()**
 
-    Called once at the end of PlayState's ``create()`` function.
+Called once at the end of PlayState's ``create()`` function.
 
-**``onUpdate(elasped)``**
+**onUpdate(elasped)**
 
-    Called once per frame, at the beginning of PlayState's ``update()`` function. ``elapsed`` is the time since the last frame, in milliseconds.
+Called once per frame, at the beginning of PlayState's ``update()`` function. ``elapsed`` is the time since the last frame, in milliseconds.
 
 .. note::
 
     This is before many variables are properly initialized, so anything you set here in PlayState will likely be overwritten.
 
-**``onUpdatePost(elasped)``**
+**onUpdatePost(elasped)**
 
-    Called once per frame, at the end of PlayState's ``update()`` function. ``elapsed`` is the time since the last frame, in milliseconds.
+Called once per frame, at the end of PlayState's ``update()`` function. ``elapsed`` is the time since the last frame, in milliseconds.
 
-**``onDestroy()``**
+**onDestroy()**
 
-    Called once whenever the song fade out is complete for any reason.
+Called once whenever the song fade out is complete for any reason.
 
-**``onBeatHit()``**
+**onBeatHit()**
 
-    Called once per beat.
+Called once per beat.
 
-**``onStepHit()``**
+**onStepHit()**
 
-    Called once per step, four times per beat.
+Called once per step, four times per beat.
 
-**``onSongStart()``**
+**onSongStart()**
 
-    Called when the song starts, and ``Conductor`` time = 0.
+Called when the song starts, and ``Conductor`` time = 0.
 
-**``onEndSong()``**
+**onEndSong()**
 
-    Called when the song ends.
+Called when the song ends.
 
     You can return ``Function_Stop`` to stop the song end function from running.
 
-**``onPause()``
+**onPause()**
 
-    Called before ``PauseSubState`` is entered.
+Called before ``PauseSubState`` is entered.
 
     You can return ``Function_Stop`` to stop the player from pausing the game.
 
-**``onResume()``**
+**onResume()**
 
-    Called when the song is resumed.
+Called when the song is resumed.
 
 .. note::
 
     This is not always after the game pauses.
 
-**``onStartCountdown()``**
+**onStartCountdown()**
 
-    Called when the countdown begins.
+Called when the countdown begins.
 
     You can return ``Function_Stop`` to stop the song from starting.
 
-**``onCountdownTick(tick)``**
+**onCountdownTick(tick)**
 
-    Called every beat while the countdown is running.
+Called every beat while the countdown is running.
 
 .. note::
 
@@ -96,21 +96,22 @@ Callbacks
     2 = "set"
 
     3 = "go"
-    
+
     4 = nothing, called at the same time as ``onSongStart``
 
-**``onMoveCamera(char)``**
+**onMoveCamera(char)**
 
-    Called when the camera is moved. ``char`` can equal ``dad``, ``gf``, or ``boyfriend``.
+Called when the camera is moved. ``char`` can equal ``dad``, ``gf``, or ``boyfriend``.
 
-**``onEvent(name, val1, val2)``**
+**onEvent(name, val1, val2)**
 
-    Called when an event is triggered. ``name`` is the event name, and ``val1`` and ``val2`` are the 2 values input in the Chart Editor.
+Called when an event is triggered. ``name`` is the event name, and ``val1`` and ``val2`` are the 2 values input in the Chart Editor.
 
-**``eventNoteEarlyTrigger(name)``**
+**eventNoteEarlyTrigger(name)**
 
-    Called to trigger an event earlier than it is put in the Chart Editor.
+Called to trigger an event earlier than it is put in the Chart Editor.
 
+.. note::
     To use this you'll need to return the ms value to start early.
 
     Here's an example:
@@ -120,11 +121,11 @@ Callbacks
             return 280
         end
 
-**``goodNoteHit(id, direction, noteType, isSustainNote)``**
+**goodNoteHit(id, direction, noteType, isSustainNote)**
 
-    Called when a note is hit.
+ Called when a note is hit.
 
-    ``id`` is the note member ID. ``direction`` is the note direction. ``noteType`` is the note type string/tag. ``isSustainNote`` tells you whether or not it is a sustain.\
+``id`` is the note member ID. ``direction`` is the note direction. ``noteType`` is the note type string/tag. ``isSustainNote`` tells you whether or not it is a sustain.\
 
 .. note::
     Direction key (applies to all callbacks where ``direction`` is used):
@@ -137,81 +138,81 @@ Callbacks
 
     3 = right   
 
-**``noteMiss(id, direction, noteType, isSustainNote)``**
+**noteMiss(id, direction, noteType, isSustainNote)**
 
-    Called when a note is missed, after the miss calculations, if the player lets the note go offscreen.
+Called when a note is missed, after the miss calculations, if the player lets the note go offscreen.
 
-    Parameters are identical to ``goodNoteHit``.
+Parameters are identical to ``goodNoteHit``.
 
-**``oponnentNoteHit(id, direction, noteType, isSustainNote)``**
+**oponnentNoteHit(id, direction, noteType, isSustainNote)**
 
-    Called when the opponent hits a note.
+Called when the opponent hits a note.
 
-    Parameters are identical to ``goodNoteHit``.
+Parameters are identical to ``goodNoteHit``.
 
-**``onGhostTap(direction)``**
+**onGhostTap(direction)**
 
-    Called when the player taps a key and there's no note. Called regardless of whether or not ghost tapping is enabled.
+Called when the player taps a key and there's no note. Called regardless of whether or not ghost tapping is enabled.
 
 
-**``noteMissPress(direction)``**
+**noteMissPress(direction)**
 
-    Called when the player presses a key and there's no note. Called only when ghost tapping is disabled.
+Called when the player presses a key and there's no note. Called only when ghost tapping is disabled.
 
-**``onKeyPress(direction)``**
+**onKeyPress(direction)**
 
-    Called when the player presses a key.
+Called when the player presses a key.
 
-**``onKeyRelease(direction)``**
+**onKeyRelease(direction)**
 
-    Called when the player releases a key.
+Called when the player releases a key.
 
-**``onGameOverStart()``**
+**onGameOverStart()**
 
-    Called once ``GameOverSubstate`` is entered.
+Called once ``GameOverSubstate`` is entered.
 
-**``onGameOver()``**
+**onGameOver()**
 
-    Called every frame when health is less than or equal to 0.
+Called every frame when health is less than or equal to 0.
 
     You can return ``Function_Stop`` to stop the game over function from running.
 
-**``onGameOverConfirm(retry)``**
+**onGameOverConfirm(retry)**
 
-    Called when the player confirms the game over screen. ``retry`` is true if the player pressed the retry button intead of ``ESC``.
+Called when the player confirms the game over screen. ``retry`` is true if the player pressed the retry button intead of ``ESC``.
 
-**``onRecalculateRating()``**
+**onRecalculateRating()**
 
-    Called when the rating is recalculated.
+Called when the rating is recalculated.
 
-    Use ``setRatingPercent`` to set the rating blurb.
+Use ``setRatingPercent`` to set the rating blurb.
 
     You can return ``Function_Stop`` to stop the function and do your own calculations.
 
-**``onHeadBop()``**
+**onHeadBop()**
 
-    Called when the head bop animation plays.
+Called when the head bop animation plays.
 
     You can return ``Function_Stop`` to stop the animation, and use your own custom scale values, with the variable ``iconSize``.
 
-**``onNextDialogue(line)``**
+**onNextDialogue(line)**
 
-    Called when the next dialogue line is displayed. ``line`` starts at 1.
+Called when the next dialogue line is displayed. ``line`` starts at 1.
 
-**``onSkipDialogue(line)``**
+**onSkipDialogue(line)**
 
-    Called when the player skips a dialogue line with ``ENTER``. ``line`` starts at 1.
+Called when the player skips a dialogue line with ``ENTER``. ``line`` starts at 1.
 
-**``onTweenCompleted(tag)``**
+**onTweenCompleted(tag)**
 
-    Called when a tween completes. ``tag`` is the tag of the tween.
+Called when a tween completes. ``tag`` is the tag of the tween.
 
-**``onTimerCompleted(tag, loops, loopsLeft)``**
+**onTimerCompleted(tag, loops, loopsLeft)**
 
-    Called when a timer completes. ``tag`` is the tag of the timer. ``loops`` is the number of times the timer has looped. ``loopsLeft`` is the number of times the timer will loop again.
+Called when a timer completes. ``tag`` is the tag of the timer. ``loops`` is the number of times the timer has looped. ``loopsLeft`` is the number of times the timer will loop again.
 
-**``onCheckForAchievement(name)``**
+**onCheckForAchievement(name)**
 
-    Called when you want to check for an achievement.
+Called when you want to check for an achievement.
 
-    You can get conditional properties and the achievement name from ``name``, then return ``Function_Continue`` to unlock the achievement.
+You can get conditional properties and the achievement name from ``name``, then return ``Function_Continue`` to unlock the achievement.
