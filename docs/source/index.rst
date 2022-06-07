@@ -19,4 +19,4 @@ Contents
 .. toctree::
 
    compiling
-   luascriptapi
+   luaapi
