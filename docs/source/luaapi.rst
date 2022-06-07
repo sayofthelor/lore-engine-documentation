@@ -144,7 +144,7 @@ Called when a note is missed, after the miss calculations, if the player lets th
 
 Parameters are identical to ``goodNoteHit``.
 
-**oponnentNoteHit(id, direction, noteType, isSustainNote)**
+**opponentNoteHit(id, direction, noteType, isSustainNote)**
 
 Called when the opponent hits a note.
 
