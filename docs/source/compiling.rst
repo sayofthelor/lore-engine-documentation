@@ -6,13 +6,14 @@ Compiling Lore Engine
 Installing Haxe and dependencies
 --------------------------------
 **To properly compile Lore Engine, you'll need the following.**
+
 `Haxe`_ (Please stop using Haxe 4.1.5.)
 
-`git-scm`_ (https://git-scm.com/downloads)
+`git-scm`_ 
 
-`VS Community`_ (https://visualstudio.microsoft.com/vs/community/) (Only required on windows and needed for compiling to Windows on Windows, specifically MSVC v142 - VS 2019 C++ x64/x86 build tools and Windows SDK (10.0.17763.0).)
+`VS Community`_ (Only required on windows and needed for compiling to Windows on Windows, specifically MSVC v142 - VS 2019 C++ x64/x86 build tools and Windows SDK (10.0.17763.0).)
 
-`Xcode`_ (https://apps.apple.com/us/app/xcode/id497799835?mt=12) (Only required on Mac and needed for compiling to Mac on Mac. Please note compiling is not tested on Mac, and I'm not responsible if it doesn't work.)
+`Xcode`_ (Only required on Mac and needed for compiling to Mac on Mac. Please note compiling is not tested on Mac, and I'm not responsible if it doesn't work.)
 
 .. note::
 
@@ -22,6 +23,7 @@ Installing Haxe and dependencies
     Please report if it works.
 
 **Once you have everything installed, run the following commands in your console.**
+
 .. code-block:: console
 
     haxelib install lime
