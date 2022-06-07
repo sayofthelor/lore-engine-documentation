@@ -40,7 +40,7 @@ Installing Haxe and dependencies
 
 .. _compiling-game:
 
-Compiling the game:
+Compiling the game
 ---------------------
 To compile the game, type ``lime test [windows][mac][linux]`` into your terminal or command prompt. To debug your mod, add `-debug` to the end of the command.
 
