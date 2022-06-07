@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-
+import furo
 # -- Project information
 
 project = 'Lore Engine'
