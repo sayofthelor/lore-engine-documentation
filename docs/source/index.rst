@@ -1,22 +1,22 @@
-Welcome to Lumache's documentation!
+Welcome to the Lore Engine documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**Lore Engine** is a modification of Psych Engine, which itself is a modification of Friday Night Funkin'.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+It adds lots of new quality-of-life features to Psych Engine, all of which are documented in the :doc:`qol` page.
+
+You can find information on how to compile the engine in the :doc:`compiling` page.
+
+Comprehensive documentaion for the Lua script API used for modding is available in the :doc:`luaapi` page.
 
 .. note::
 
-   This project is under active development.
+   Lore Engine has more dependencies than Psych Engine, so please make sure to check the compiling page.
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   compiling
+   luaapi

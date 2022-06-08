@@ -1,13 +1,13 @@
 # Configuration file for the Sphinx documentation builder.
-
+import furo
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Lore Engine'
+copyright = '2022, sayofthelor'
+author = 'sayofthelor'
 
-release = '0.1'
-version = '0.1.0'
+release = '0.5'
+version = '0.5.0'
 
 # -- General configuration
 
@@ -29,7 +29,8 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = "furo"
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
